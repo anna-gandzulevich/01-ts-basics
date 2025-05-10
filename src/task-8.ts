@@ -7,8 +7,8 @@ interface Post {
 }
 
 async function fetchPosts(): Promise<Post[]> {
-  const response = await axios.get(
-    "<https://jsonplaceholder.typicode.com/posts>"
+  const response = await axios.get<Post[]>(
+    "https://jsonplaceholder.typicode.com/posts"
   );
   return response.data;
 }
